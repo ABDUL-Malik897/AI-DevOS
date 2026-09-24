@@ -1,0 +1,169 @@
+.workspace-ai-input-area {
+    flex-shrink: 0;
+    padding: 10px;
+    border-top: 1px solid var(--workspace-border);
+    background: rgba(5, 9, 21, 0.96);
+}
+
+.workspace-selection-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+    margin-bottom: 7px;
+}
+
+.workspace-selection-button {
+    min-width: 0;
+    height: 28px;
+    padding: 0 8px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.025);
+    color: var(--workspace-muted);
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 9px;
+    font-weight: 700;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    transition:
+        background 0.12s ease,
+        border-color 0.12s ease,
+        color 0.12s ease;
+}
+
+.workspace-selection-button:hover:not(:disabled) {
+    color: var(--workspace-accent);
+    border-color: rgba(77, 231, 255, 0.20);
+    background: rgba(77, 231, 255, 0.045);
+}
+
+.workspace-selection-button:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+.workspace-ai-form {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 0;
+}
+
+.workspace-ai-input {
+    width: 100%;
+    min-width: 0;
+    min-height: 38px;
+    box-sizing: border-box;
+    padding: 8px 10px;
+    resize: vertical;
+    border: 1px solid rgba(255, 255, 255, 0.075);
+    border-radius: 7px;
+    outline: none;
+    background: rgba(255, 255, 255, 0.025);
+    color: var(--workspace-text);
+    font-family: inherit;
+    font-size: 10px;
+    line-height: 1.45;
+    transition:
+        border-color 0.12s ease,
+        background 0.12s ease,
+        box-shadow 0.12s ease;
+}
+
+.workspace-ai-input::placeholder {
+    color: var(--workspace-muted);
+}
+
+.workspace-ai-input:focus {
+    border-color: rgba(77, 231, 255, 0.25);
+    background: rgba(77, 231, 255, 0.02);
+
+    box-shadow: 0 0 0 2px rgba(77, 231, 255, 0.035);
+}
+
+.workspace-ai-button-group {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 5px;
+    min-width: 0;
+}
+
+.workspace-ai-button-group button {
+    min-width: 0;
+    height: 31px;
+    padding: 0 6px;
+    overflow: hidden;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 9px;
+    font-weight: 800;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    transition:
+        background 0.12s ease,
+        border-color 0.12s ease,
+        color 0.12s ease,
+        transform 0.12s ease;
+}
+
+.workspace-ai-send {
+    border: 1px solid rgba(77, 231, 255, 0.25);
+    background: rgba(77, 231, 255, 0.10);
+    color: var(--workspace-accent);
+}
+
+.workspace-ai-send:hover:not(:disabled) {
+    background: rgba(77, 231, 255, 0.16);
+    border-color: rgba(77, 231, 255, 0.38);
+    transform: translateY(-1px);
+}
+
+.workspace-ai-generate {
+    border: 1px solid rgba(77, 231, 255, 0.16);
+    background: rgba(77, 231, 255, 0.045);
+    color: var(--workspace-accent);
+}
+
+.workspace-ai-generate:hover:not(:disabled) {
+    border-color: rgba(77, 231, 255, 0.28);
+    background: rgba(77, 231, 255, 0.09);
+    color: var(--workspace-text);
+    transform: translateY(-1px);
+}
+
+.workspace-ai-generate-multi {
+    border-color: rgba(149, 117, 255, 0.20);
+    background: rgba(149, 117, 255, 0.055);
+    color: #b9a6ff;
+}
+
+.workspace-ai-generate-multi:hover:not(:disabled) {
+    border-color: rgba(149, 117, 255, 0.34);
+    background: rgba(149, 117, 255, 0.10);
+    color: var(--workspace-text);
+    transform: translateY(-1px);
+}
+
+.workspace-ai-button-group button:disabled {
+    opacity: 0.42;
+    cursor: not-allowed;
+    transform: none;
+}
+
+@media (max-width: 420px) {
+    .workspace-selection-actions {
+        grid-template-columns: 1fr;
+    }
+    .workspace-ai-button-group {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 950px) {
+    .workspace-ai-input {
+        min-height: 42px;
+    }
+}

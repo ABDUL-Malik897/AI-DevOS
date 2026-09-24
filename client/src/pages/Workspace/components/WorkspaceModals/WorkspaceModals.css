@@ -1,0 +1,205 @@
+.workspace-modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background:rgba(0, 0, 0, 0.58);
+    backdrop-filter: blur(6px);
+}
+
+.workspace-save-modal {
+    width: min(520px, calc(100vw - 32px));
+    display: grid;
+    grid-template-columns: 42px minmax(0, 1fr);
+    column-gap: 14px;
+    row-gap: 16px;
+    padding: 20px;
+    border: 1px solid
+        rgba(77, 231, 255, 0.14);
+    border-radius: 10px;
+    background: rgba(8, 13, 29, 0.98);
+    box-shadow:
+        0 28px 80px rgba(0, 0, 0, 0.6),
+        0 0 40px rgba(77, 231, 255, 0.05);
+    color: var(--workspace-text);
+    animation: workspace-modal-enter 0.14s ease-out;
+}
+
+.workspace-save-modal-icon {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 9px;
+    background: rgba(255, 255, 255, 0.035);
+    color: #ffd36a;
+    font-size: 18px;
+}
+
+.workspace-save-modal-content {
+    min-width: 0;
+}
+
+.workspace-save-modal-label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--workspace-accent);
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+}
+
+.workspace-save-modal-content h3 {
+    margin: 0;
+    color: var(--workspace-text);
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.workspace-save-modal-content p {
+    margin: 8px 0 0;
+    color: var(--workspace-muted);
+    font-size: 9px;
+    line-height: 1.6;
+}
+
+.workspace-save-modal-content strong {
+    color: var(--workspace-text);
+    font-weight: 600;
+}
+
+.workspace-save-modal-actions {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 7px;
+    padding-top: 4px;
+}
+
+.workspace-save-modal-cancel,
+.workspace-save-modal-confirm {
+    min-height: 32px;
+    padding: 0 12px;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    transition:
+        background 0.12s ease,
+        border-color 0.12s ease,
+        color 0.12s ease,
+        transform 0.12s ease;
+}
+
+.workspace-save-modal-cancel {
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.025);
+    color: var(--workspace-muted);
+}
+
+.workspace-save-modal-cancel:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.055);
+    color: var(--workspace-text);
+}
+
+.workspace-save-modal-confirm {
+    border: 1px solid rgba(77, 231, 255, 0.28);
+    background: rgba(77, 231, 255, 0.10);
+    color: var(--workspace-accent);
+}
+
+.workspace-save-modal-confirm:hover:not(:disabled) {
+    background: rgba(77, 231, 255, 0.17);
+    border-color: rgba(77, 231, 255, 0.42);
+    transform: translateY(-1px);
+}
+
+.workspace-save-modal-cancel:disabled,
+.workspace-save-modal-confirm:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+.workspace-switch-modal .workspace-save-modal-icon {
+    color: #ffb56b;
+}
+
+@keyframes workspace-modal-enter {
+    from {
+        opacity: 0;
+        transform: translateY(6px) scale(0.985);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@media (max-width: 560px) {
+    .workspace-modal-overlay {
+        padding: 12px;
+    }
+    .workspace-save-modal {
+        width: 100%;
+        grid-template-columns: 36px minmax(0, 1fr);
+        column-gap: 11px;
+        padding: 16px;
+    }
+
+    .workspace-save-modal-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 15px;
+    }
+    .workspace-save-modal-content h3 {
+        font-size: 12px;
+    }
+    .workspace-save-modal-actions {
+        flex-wrap: wrap;
+    }
+    .workspace-save-modal-cancel,
+    .workspace-save-modal-confirm {
+        flex: 1;
+        min-width: 100px;
+    }
+}
+
+.workspace-switch-discard {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+    height: 30px;
+    padding: 0 11px;
+    border: 1px solid rgba(255, 110, 120, 0.18);
+    border-radius: 6px;
+    background: rgba(255, 110, 120, 0.05);
+    color: #ff8f9a;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 10px;
+    font-weight: 700;
+    transition:
+        background 0.12s ease,
+        border-color 0.12s ease,
+        color 0.12s ease;
+}
+
+.workspace-switch-discard:hover {
+    border-color: rgba(255, 110, 120, 0.3);
+    background: rgba(255, 110, 120, 0.1);
+    color: #ffadb5;
+}
+
+.workspace-switch-discard:focus-visible {
+    outline: 1px solid var(--workspace-accent);
+    outline-offset: 1px;
+}

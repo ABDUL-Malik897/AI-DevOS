@@ -1,0 +1,21 @@
+.signup-showcase {
+    background:
+        radial-gradient(circle at 18% 12%,rgba(63, 219, 255, 0.12), transparent 32%),
+        radial-gradient(circle at 76% 75%,rgba(187, 76, 255, 0.14), transparent 34%),
+        rgba(6, 11, 27, 0.68);
+}
+
+.signup-shell .auth-card {
+    box-shadow:
+        0 35px 90px rgba(0, 0, 0, 0.4),
+        0 0 55px rgba(93, 81, 255, 0.06),
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.signup-shell .auth-primary-button {
+    background: linear-gradient(100deg, #496eff,#785bff 48%,#bd59ff);
+}
+
+.signup-shell .auth-card-glow {
+    background: rgba(133, 80, 255, 0.2);
+}

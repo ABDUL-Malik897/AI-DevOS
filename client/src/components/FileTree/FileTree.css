@@ -1,0 +1,217 @@
+.file-tree {
+    width: 100%;
+    color: #bdc7da;
+    font-size: 11px;
+}
+
+.file-tree-folder {
+    width: 100%;
+}
+
+.file-tree-folder-button,
+.file-tree-file-button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border: 0;
+    cursor: pointer;
+    font-family: inherit;
+    text-align: left;
+    background: transparent;
+    transition:
+        background 0.15s ease,
+        color 0.15s ease;
+}
+
+.file-tree-folder-button {
+    gap: 6px;
+    min-height: 27px;
+    padding: 3px 7px;
+    color: #aeb9cd;
+    border-radius: 6px;
+}
+
+.file-tree-folder-button:hover {
+    color: #f2f6ff;
+    background: rgba(77, 231, 255, 0.045);
+}
+
+.file-tree-arrow {
+    width: 10px;
+    flex-shrink: 0;
+    color: #56637c;
+    font-size: 9px;
+}
+
+.file-tree-folder-icon {
+    width: 17px;
+    flex-shrink: 0;
+    font-size: 12px;
+}
+
+.file-tree-name {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.file-tree-children {
+    margin-left: 9px;
+    padding-left: 10px;
+    border-left: 1px solid rgba(255, 255, 255, 0.045);
+}
+
+.file-tree-file-button {
+    gap: 7px;
+    min-height: 27px;
+    padding: 3px 7px;
+    color: #aeb9cd;
+    border-radius: 6px;
+}
+
+.file-tree-file-button:hover {
+    color: #ffffff;
+    background: rgba(77, 231, 255, 0.06);
+}
+
+.file-tree-file-icon {
+    width: 16px;
+    flex-shrink: 0;
+    font-size: 11px;
+}
+
+.file-tree-folder-button:focus-visible,
+.file-tree-file-button:focus-visible {
+    outline: 1px solid rgba(77, 231, 255, 0.35);
+    outline-offset: -1px;
+}
+
+.file-tree-folder-button:active,
+.file-tree-file-button:active {
+    background: rgba(77, 231, 255, 0.08);
+}
+
+.file-tree-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 6px 5px 8px;
+    margin-bottom: 3px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.045);
+}
+
+.file-tree-toolbar-button {
+    min-height: 25px;
+    padding: 3px 7px;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.025);
+    color: #9eabc0;
+    font-family: inherit;
+    font-size: 10px;
+    cursor: pointer;
+    transition:
+        background 0.15s ease,
+        color 0.15s ease,
+        border-color 0.15s ease;
+}
+
+.file-tree-toolbar-button:hover {
+    background: rgba(77, 231, 255, 0.06);
+    border-color: rgba(77, 231, 255, 0.18);
+    color: #ffffff;
+}
+
+.file-tree-toolbar-button:disabled {
+    opacity: 0.5;
+    cursor: default;
+}
+
+.file-tree-refresh-button {
+    width: 27px;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    font-size: 12px;
+}
+
+.file-tree-content {
+    width: 100%;
+}
+
+.file-tree-empty {
+    padding: 12px 8px;
+    color: #667187;
+    font-size: 10px;
+    text-align: center;
+}
+
+.file-tree-row {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.file-tree-row .file-tree-folder-button,
+.file-tree-row .file-tree-file-button {
+    flex: 1;
+    min-width: 0;
+}
+
+.file-tree-more-button {
+    display: none;
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    margin-right: 4px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: inherit;
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.file-tree-row:hover .file-tree-more-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.file-tree-more-button:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.file-tree-action-menu {
+    position: absolute;
+    bottom: 100%;
+    right: 4px;
+    z-index: 1000;
+    min-width: 150px;
+    padding: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 6px;
+    background: #252526;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+}
+
+.file-tree-action-menu button {
+    display: block;
+    width: 100%;
+    padding: 7px 10px;
+    border: none;
+    border-radius: 4px;
+    background: transparent;
+    color: inherit;
+    text-align: left;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.file-tree-action-menu button:hover {
+    background: rgba(255, 255, 255, 0.08);
+}

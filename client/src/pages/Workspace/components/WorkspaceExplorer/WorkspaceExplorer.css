@@ -1,0 +1,304 @@
+.workspace-explorer {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    min-height: 0;
+    height: 100%;
+}
+
+.workspace-panel-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    min-height: 38px;
+    padding: 0 10px;
+    border-bottom: 1px solid var(--workspace-border);
+    background: rgba(7, 11, 25, 0.7);
+}
+
+.workspace-panel-title {
+    color: var(--workspace-text);
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+}
+
+.workspace-panel-heading-actions {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    min-width: 0;
+}
+
+.workspace-panel-subtitle {
+    color: var(--workspace-muted);
+    font-size: 9px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.workspace-search-trigger {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    background: transparent;
+    color: var(--workspace-muted);
+    cursor: pointer;
+    font-size: 13px;
+    transition:
+        background 0.15s ease,
+        color 0.15s ease,
+        border-color 0.15s ease;
+}
+
+.workspace-search-trigger:hover {
+    background: rgba(77, 231, 255, 0.06);
+    border-color: rgba(77, 231, 255, 0.15);
+    color: var(--workspace-accent);
+}
+
+.workspace-file-tree {
+    flex: 1;
+    min-height: 0;
+    overflow: auto;
+    padding: 5px 4px;
+}
+
+.workspace-search-panel {
+    margin-bottom: 6px;
+    padding: 7px;
+    border: 1px solid var(--workspace-border);
+    border-radius: 7px;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.workspace-search-input-row {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.workspace-search-input {
+    flex: 1;
+    min-width: 0;
+    height: 28px;
+    padding: 0 8px;
+    border: 1px solid var(--workspace-border);
+    border-radius: 5px;
+    outline: none;
+    background: rgba(0, 0, 0, 0.18);
+    color: var(--workspace-text);
+    font-family: inherit;
+    font-size: 10px;
+}
+
+.workspace-search-input:focus {
+    border-color: rgba(77, 231, 255, 0.3);
+}
+
+.workspace-search-input::placeholder {
+    color: var(--workspace-muted);
+}
+
+.workspace-search-results {
+    margin-top: 6px;
+    max-height: 220px;
+    overflow: auto;
+}
+
+.workspace-search-result {
+    width: 100%;
+    display: flex;
+    padding: 7px;
+    border: 0;
+    border-radius: 5px;
+    background: transparent;
+    color: var(--workspace-text);
+    text-align: left;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 10px;
+}
+
+.workspace-search-result:hover {
+    background: rgba(77, 231, 255, 0.05);
+}
+
+.workspace-file-row {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-width: 0;
+    min-height: 27px;
+    padding: 0 7px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    background: transparent;
+    color: var(--workspace-muted);
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 10px;
+    text-align: left;
+    transition:
+        background 0.12s ease,
+        border-color 0.12s ease,
+        color 0.12s ease;
+}
+
+.workspace-file-row:hover {
+    background: rgba(255, 255, 255, 0.035);
+    color: var(--workspace-text);
+}
+
+.workspace-file-row--selected {
+    background: rgba(77, 231, 255, 0.07);
+    border-color: rgba(77, 231, 255, 0.14);
+    color: var(--workspace-accent);
+}
+
+.workspace-file-icon {
+    width: 18px;
+    flex: 0 0 18px;
+    color: var(--workspace-muted);
+    text-align: center;
+}
+
+.workspace-file-name {
+    min-width: 0;
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.workspace-file-actions {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    margin-left: 5px;
+}
+
+.workspace-file-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    border: 0;
+    border-radius: 4px;
+    background: transparent;
+    color: var(--workspace-muted);
+    cursor: pointer;
+    font-size: 10px;
+}
+
+.workspace-file-action:hover {
+    background: rgba(77, 231, 255, 0.07);
+    color: var(--workspace-accent);
+}
+
+.workspace-file-empty {
+    padding: 16px 10px;
+    color: var(--workspace-muted);
+    text-align: center;
+    font-size: 10px;
+    line-height: 1.5;
+}
+
+.workspace-explorer button:focus-visible,
+.workspace-explorer input:focus-visible {
+    outline: 1px solid var(--workspace-accent);
+    outline-offset: 1px;
+}
+
+@media (max-width: 720px) {
+    .workspace-panel-subtitle {
+        display: none;
+    }
+}
+
+.workspace-search-status {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    min-width: 0;
+    margin-top: 6px;
+    color: var(--workspace-muted);
+    font-size: 10px;
+    line-height: 1.3;
+}
+
+.workspace-search-count {
+    flex: 0 0 auto;
+    color: var(--workspace-muted);
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.workspace-search-close {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    flex: 0 0 24px;
+    padding: 0;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    background: transparent;
+    color: var(--workspace-muted);
+    cursor: pointer;
+    font-size: 13px;
+    line-height: 1;
+    transition:
+        background 0.12s ease,
+        border-color 0.12s ease,
+        color 0.12s ease;
+}
+
+.workspace-search-close:hover {
+    border-color: rgba(255, 255, 255, 0.07);
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--workspace-text);
+}
+
+.workspace-search-result-location {
+    min-width: 0;
+    margin-top: 2px;
+    color: var(--workspace-muted);
+    font-size: 9px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.workspace-search-result-line {
+    display: block;
+    margin-top: 2px;
+    color: var(--workspace-muted);
+    font-size: 9px;
+    line-height: 1.3;
+}
+
+.workspace-search-status + .workspace-search-results {
+    margin-top: 6px;
+}
+
+@media (max-width: 600px) {
+    .workspace-search-status {
+        font-size: 9px;
+    }
+    .workspace-search-result-location,
+    .workspace-search-result-line,
+    .workspace-search-count {
+        font-size: 6px;
+    }
+}

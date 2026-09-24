@@ -1,0 +1,1204 @@
+.repositories-page {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+    color: #f4f7ff;
+    background:
+        radial-gradient(
+        circle at 12% 8%,
+        rgba(77, 231, 255, 0.065),
+        transparent 30%
+        ),
+        radial-gradient(
+        circle at 88% 30%,
+        rgba(154, 99, 255, 0.07),
+        transparent 32%
+        ),
+        #050816;
+}
+
+.repositories-grid-bg {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.022) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.022) 1px, transparent 1px);
+    background-size: 70px 70px;
+    mask-image: linear-gradient(to bottom, black, rgba(0, 0, 0, 0.1));
+}
+
+.repositories-glow {
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    filter: blur(130px);
+    opacity: 0.12;
+    pointer-events: none;
+}
+
+.repositories-glow-one {
+    top: 100px;
+    left: -260px;
+    background: #4de7ff;
+}
+
+.repositories-glow-two {
+    top: 520px;
+    right: -260px;
+    background: #9a63ff;
+}
+
+.repositories-navbar {
+    position: relative;
+    z-index: 5;
+    width: min(1400px, calc(100% - 48px));
+    min-height: 76px;
+    margin: 22px auto 0;
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 22px;
+    background: rgba(8, 13, 30, 0.72);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.25),
+        inset 0 1px rgba(255, 255, 255, 0.04);
+}
+
+.repositories-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+}
+
+.repositories-brand-icon {
+    width: 43px;
+    height: 43px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 13px;
+    color: #4de7ff;
+    background: linear-gradient(135deg,rgba(77, 231, 255, 0.22),rgba(154, 99, 255, 0.25));
+    border: 1px solid rgba(77, 231, 255, 0.2);
+    font-family: monospace;
+    font-size: 15px;
+    font-weight: 800;
+}
+
+.repositories-brand-name {
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.repositories-brand-name span {
+    color: #4de7ff;
+}
+
+.repositories-brand-status {
+    margin-top: 2px;
+    color: #68728e;
+    font-size: 1vh;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.repositories-nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.repositories-nav-button,
+.repositories-projects-button {
+    height: 35px;
+    padding: 0 14px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 10px;
+    font-weight: 700;
+    transition: 0.2s ease;
+}
+
+.repositories-nav-button {
+    color: #9ca7bd;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    background: rgba(255, 255, 255, 0.025);
+}
+
+.repositories-projects-button {
+    color: #061019;
+    border: 0;
+    background: linear-gradient(110deg, #4de7ff, #648bff);
+    box-shadow: 0 8px 22px rgba(77, 231, 255, 0.1);
+}
+
+.repositories-nav-button:hover,
+.repositories-projects-button:hover {
+    transform: translateY(-2px);
+}
+
+.repositories-container {
+    position: relative;
+    z-index: 2;
+    width: min(1400px, calc(100% - 48px));
+    margin: 0 auto;
+    padding: 72px 0 35px;
+}
+
+.repositories-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.repositories-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #4de7ff;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.repositories-status-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #54f0bd;
+    box-shadow: 0 0 14px rgba(84, 240, 189, 0.7);
+}
+
+.repositories-header h1 {
+  margin: 14px 0 11px;
+
+  font-size: clamp(44px, 5vw, 70px);
+
+  line-height: 0.95;
+
+  letter-spacing: -3px;
+}
+
+.repositories-header h1 span {
+  background: linear-gradient(110deg, #4de7ff, #648bff, #9a63ff);
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  color: transparent;
+}
+
+.repositories-header p {
+  max-width: 690px;
+
+  margin: 0;
+
+  color: #7d879f;
+
+  font-size: 14px;
+
+  line-height: 1.7;
+}
+
+/* Count */
+
+.repositories-count-card {
+  min-width: 120px;
+
+  padding: 17px 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 17px;
+
+  background: rgba(255, 255, 255, 0.03);
+
+  backdrop-filter: blur(15px);
+}
+
+.repositories-count {
+  font-size: 31px;
+  font-weight: 800;
+
+  background: linear-gradient(110deg, #4de7ff, #9a63ff);
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  color: transparent;
+}
+
+.repositories-count-label {
+  margin-top: 4px;
+
+  color: #606a84;
+
+  font-size: 1vh;
+  font-weight: 800;
+
+  letter-spacing: 1.4px;
+}
+
+/* =========================================
+   SECTION
+========================================= */
+
+.repositories-section {
+  margin-top: 62px;
+}
+
+.repositories-section-heading {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.repositories-section-heading span {
+  color: #56627b;
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: 1.8px;
+}
+
+.repositories-section-heading h2 {
+  margin: 6px 0 0;
+
+  color: #edf1fb;
+
+  font-size: 25px;
+
+  letter-spacing: -1px;
+}
+
+.repositories-section-line {
+  flex: 1;
+  height: 1px;
+
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.09), transparent);
+}
+
+/* =========================================
+   GRID
+========================================= */
+
+.repositories-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 17px;
+
+  margin-top: 24px;
+}
+
+/* =========================================
+   CARD
+========================================= */
+
+.repository-card {
+  position: relative;
+
+  min-height: 355px;
+
+  padding: 23px;
+
+  border: 1px solid rgba(255, 255, 255, 0.075);
+
+  border-radius: 22px;
+
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.045),
+    rgba(255, 255, 255, 0.017)
+  );
+
+  overflow: hidden;
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.repository-card:hover {
+  transform: translateY(-6px);
+
+  border-color: rgba(77, 231, 255, 0.2);
+
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.28),
+    0 0 40px rgba(77, 231, 255, 0.035);
+}
+
+.repository-card-glow {
+  position: absolute;
+
+  top: -120px;
+  right: -100px;
+
+  width: 250px;
+  height: 250px;
+
+  border-radius: 50%;
+
+  background: rgba(77, 231, 255, 0.06);
+
+  filter: blur(65px);
+
+  pointer-events: none;
+}
+
+/* =========================================
+   CARD HEADER
+========================================= */
+
+.repository-card-header {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.repository-number {
+  color: #424d67;
+
+  font-family: monospace;
+
+  font-size: 9px;
+  font-weight: 700;
+
+  letter-spacing: 1px;
+}
+
+.repository-visibility {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  font-size: 1vh;
+  font-weight: 800;
+
+  letter-spacing: 1px;
+}
+
+.repository-visibility span {
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+}
+
+.repository-visibility.public {
+  color: #58d9b1;
+}
+
+.repository-visibility.public span {
+  background: #54f0bd;
+
+  box-shadow: 0 0 9px rgba(84, 240, 189, 0.55);
+}
+
+.repository-visibility.private {
+  color: #c191ff;
+}
+
+.repository-visibility.private span {
+  background: #ae79ff;
+
+  box-shadow: 0 0 9px rgba(174, 121, 255, 0.55);
+}
+
+/* =========================================
+   IDENTITY
+========================================= */
+
+.repository-identity {
+  position: relative;
+
+  margin-top: 24px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 13px;
+}
+
+.repository-icon {
+  width: 51px;
+  height: 51px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 14px;
+
+  color: #9fb4ff;
+
+  border: 1px solid rgba(77, 231, 255, 0.11);
+
+  background: linear-gradient(
+    135deg,
+    rgba(77, 231, 255, 0.08),
+    rgba(100, 100, 255, 0.08)
+  );
+}
+
+.repository-icon svg {
+  width: 21px;
+  height: 21px;
+}
+
+.repository-title-area {
+  min-width: 0;
+}
+
+.repository-title-area h2 {
+  margin: 0;
+
+  overflow: hidden;
+
+  color: #edf1fa;
+
+  font-size: 18px;
+  font-weight: 800;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.repository-title-area span {
+  display: block;
+
+  margin-top: 5px;
+
+  color: #59657e;
+
+  font-family: monospace;
+
+  font-size: 9px;
+}
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.repository-description {
+  position: relative;
+
+  min-height: 43px;
+
+  margin: 21px 0 0;
+
+  color: #7c869e;
+
+  font-size: 11px;
+
+  line-height: 1.7;
+}
+
+/* =========================================
+   META
+========================================= */
+
+.repository-meta {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 9px;
+
+  margin-top: 20px;
+}
+
+.repository-meta-box {
+  padding: 11px;
+
+  border: 1px solid rgba(255, 255, 255, 0.05);
+
+  border-radius: 11px;
+
+  background: rgba(255, 255, 255, 0.018);
+}
+
+.repository-meta-box > span {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: #4f5a72;
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: 1px;
+}
+
+.repository-meta-box strong {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  color: #9da8bd;
+
+  font-size: 9px;
+  font-weight: 600;
+}
+
+.language-dot {
+  width: 6px;
+  height: 6px;
+
+  display: inline-block;
+
+  border-radius: 50%;
+
+  background: #5d9dff;
+}
+
+/* =========================================
+   DIVIDER
+========================================= */
+
+.repository-divider {
+  position: relative;
+
+  height: 1px;
+
+  margin: 19px 0;
+
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.075), transparent);
+}
+
+/* =========================================
+   USE BUTTON
+========================================= */
+
+.repository-use-button {
+  position: relative;
+
+  width: 100%;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 13px;
+
+  border: 1px solid rgba(77, 231, 255, 0.13);
+
+  border-radius: 10px;
+
+  color: #4de7ff;
+
+  background: rgba(77, 231, 255, 0.045);
+
+  cursor: pointer;
+
+  font-size: 9px;
+  font-weight: 800;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.repository-use-button strong {
+  font-size: 15px;
+}
+
+.repository-use-button:hover {
+  transform: translateY(-2px);
+
+  background: rgba(77, 231, 255, 0.08);
+
+  border-color: rgba(77, 231, 255, 0.24);
+}
+
+/* =========================================
+   EMPTY STATE
+========================================= */
+
+.repositories-empty {
+  min-height: 360px;
+
+  margin-top: 45px;
+
+  padding: 45px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 28px;
+
+  border: 1px solid rgba(255, 255, 255, 0.075);
+
+  border-radius: 23px;
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(77, 231, 255, 0.04),
+      transparent 45%
+    ),
+    rgba(255, 255, 255, 0.02);
+}
+
+.repositories-empty-icon {
+  width: 80px;
+  height: 80px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(77, 231, 255, 0.13);
+
+  border-radius: 22px;
+
+  color: #4de7ff;
+
+  background: rgba(77, 231, 255, 0.04);
+
+  font-size: 31px;
+}
+
+.empty-kicker,
+.repositories-bottom > div:first-child > span {
+  color: #55617a;
+
+  font-size: 1vh;
+  font-weight: 800;
+
+  letter-spacing: 1.6px;
+}
+
+.repositories-empty h2 {
+  margin: 7px 0;
+
+  font-size: 26px;
+
+  letter-spacing: -1px;
+}
+
+.repositories-empty p {
+  margin: 0;
+
+  color: #737e97;
+
+  font-size: 12px;
+}
+
+.repositories-empty button {
+  margin-top: 20px;
+
+  height: 38px;
+
+  padding: 0 15px;
+
+  border: 0;
+  border-radius: 10px;
+
+  color: #061019;
+
+  background: linear-gradient(110deg, #4de7ff, #648bff);
+
+  cursor: pointer;
+
+  font-size: 9px;
+  font-weight: 800;
+}
+
+/* =========================================
+   BOTTOM WORKFLOW
+========================================= */
+
+.repositories-bottom {
+  margin-top: 60px;
+
+  padding: 25px 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 30px;
+
+  border: 1px solid rgba(255, 255, 255, 0.065);
+
+  border-radius: 18px;
+
+  background: rgba(255, 255, 255, 0.018);
+}
+
+.repositories-bottom h2 {
+  margin: 6px 0 0;
+
+  color: #c8d0e0;
+
+  font-size: 18px;
+
+  letter-spacing: -0.5px;
+}
+
+.workflow-track {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+}
+
+.workflow-step {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  color: #59657e;
+
+  font-size: 9px;
+  font-weight: 800;
+
+  white-space: nowrap;
+}
+
+.workflow-step span {
+  color: #404a63;
+
+  font-family: monospace;
+
+  font-size: 1vh;
+}
+
+.workflow-step.active {
+  color: #4de7ff;
+}
+
+.workflow-step.active span {
+  color: #4de7ff;
+}
+
+.workflow-line {
+  width: 35px;
+  height: 1px;
+
+  background: rgba(255, 255, 255, 0.07);
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.repositories-footer {
+  margin-top: 45px;
+
+  padding: 22px 0;
+
+  display: flex;
+  justify-content: space-between;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+
+  color: #485169;
+
+  font-size: 9px;
+  font-weight: 700;
+
+  letter-spacing: 1.2px;
+}
+
+/* =========================================
+   LOADING
+========================================= */
+
+.repositories-loading {
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+}
+
+.repositories-loading > span {
+  color: #4de7ff;
+
+  font-size: 1vh;
+  font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+.repositories-loading h2 {
+  margin: 0;
+
+  color: #9da7bb;
+
+  font-size: 15px;
+
+  font-weight: 500;
+}
+
+.repositories-loader {
+  width: 48px;
+  height: 48px;
+
+  margin-bottom: 8px;
+
+  border: 2px solid rgba(77, 231, 255, 0.1);
+
+  border-top-color: #4de7ff;
+
+  border-radius: 50%;
+
+  box-shadow: 0 0 30px rgba(77, 231, 255, 0.1);
+
+  animation: repository-spin 0.8s linear infinite;
+}
+
+@keyframes repository-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================================
+   ERROR STATE
+========================================= */
+
+.repositories-error-state {
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+}
+
+.repositories-error-icon {
+  width: 58px;
+  height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 17px;
+
+  color: #ff7890;
+
+  border: 1px solid rgba(255, 91, 122, 0.15);
+
+  background: rgba(255, 91, 122, 0.05);
+
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.repositories-error-state > span {
+  margin-top: 16px;
+
+  color: #ff7890;
+
+  font-size: 1vh;
+  font-weight: 800;
+
+  letter-spacing: 1.7px;
+}
+
+.repositories-error-state h2 {
+  max-width: 500px;
+
+  margin: 9px 20px 0;
+
+  color: #9da7bc;
+
+  font-size: 14px;
+
+  font-weight: 500;
+}
+
+.repositories-error-state button {
+  margin-top: 20px;
+
+  height: 38px;
+
+  padding: 0 15px;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 10px;
+
+  color: #a7b1c4;
+
+  background: rgba(255, 255, 255, 0.03);
+
+  cursor: pointer;
+
+  font-size: 9px;
+  font-weight: 700;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1050px) {
+  .repositories-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .repositories-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 700px) {
+  .repositories-navbar {
+    width: calc(100% - 24px);
+  }
+
+  .repositories-container {
+    width: calc(100% - 24px);
+
+    padding-top: 50px;
+  }
+
+  .repositories-brand-status {
+    display: none;
+  }
+
+  .repositories-nav-actions {
+    gap: 5px;
+  }
+
+  .repositories-nav-button {
+    font-size: 0;
+  }
+
+  .repositories-nav-button::before {
+    content: "←";
+
+    font-size: 15px;
+  }
+
+  .repositories-header {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+  .repositories-header h1 {
+    font-size: 47px;
+  }
+
+  .repositories-count-card {
+    flex-direction: row;
+
+    gap: 10px;
+  }
+
+  .repositories-count-label {
+    margin-top: 0;
+  }
+
+  .repositories-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .repositories-empty {
+    flex-direction: column;
+
+    text-align: center;
+
+    padding: 30px 20px;
+  }
+
+  .workflow-track {
+    flex-wrap: wrap;
+  }
+
+  .repositories-footer {
+    flex-direction: column;
+
+    gap: 8px;
+  }
+}
+
+.repositories-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 30px;
+    padding-top: 24px;
+    border-top: 1px solid var(--workspace-border, rgba(255, 255, 255, 0.08));
+}
+
+.repositories-pagination-button {
+    min-width: 130px;
+    padding: 11px 18px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.03);
+    color: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.repositories-pagination-button:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-1px);
+}
+
+.repositories-pagination-button:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+}
+
+.repositories-pagination-status {
+    min-width: 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+}
+
+.repositories-pagination-status span {
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    opacity: 0.5;
+}
+
+.repositories-pagination-status strong {
+    font-size: 18px;
+    line-height: 1;
+}
+
+@media (max-width: 600px) {
+    .repositories-pagination {
+        gap: 8px;
+    }
+
+    .repositories-pagination-button {
+        min-width: 0;
+        flex: 1;
+        padding: 10px 12px;
+        font-size: 12px;
+    }
+
+    .repositories-pagination-status {
+        min-width: 60px;
+    }
+}
+
+.repositories-search {
+    position: relative;
+    width: 100%;
+    margin-bottom: 24px;
+}
+
+.repositories-search input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 14px 46px 14px 44px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.03);
+    color: inherit;
+    font-size: 14px;
+    outline: none;
+    transition:
+        border-color 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.repositories-search input::placeholder {
+    opacity: 0.45;
+}
+
+.repositories-search input:focus {
+    border-color: rgba(255, 255, 255, 0.22);
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.03);
+}
+
+.repositories-search-icon {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.repositories-search-clear {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 28px;
+    height: 28px;
+    border: 0;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.06);
+    color: inherit;
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+    opacity: 0.7;
+    transition:
+        background 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.repositories-search-clear:hover {
+    background: rgba(255, 255, 255, 0.1);
+    opacity: 1;
+}
+
+.repositories-pagination-status small {
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    opacity: 0.45;
+}

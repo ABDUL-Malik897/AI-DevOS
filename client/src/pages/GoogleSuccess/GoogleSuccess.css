@@ -1,0 +1,245 @@
+.google-success-page {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    color: #f4f7ff;
+    background:radial-gradient(circle at 20% 20%,rgba(77, 231, 255, 0.07), transparent 30%),
+        radial-gradient(circle at 80% 75%,rgba(154, 99, 255, 0.08), transparent 32%),#050816;
+}
+
+.google-success-grid {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.022) 1px, transparent 1px),
+        linear-gradient(90deg,rgba(255, 255, 255, 0.022) 1px, transparent 1px); 
+    background-size: 70px 70px;
+    mask-image: linear-gradient(to bottom,black,rgba(0, 0, 0, 0.15));
+}
+.google-success-glow {
+    position: fixed;
+    width: 420px;
+    height: 420px;
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: 0.12;
+    pointer-events: none;
+}
+
+.google-success-glow-one {
+    top: -180px;
+    left: -150px;
+    background: #4de7ff;
+}
+
+.google-success-glow-two {
+    right: -160px;
+    bottom: -150px;
+    background: #9a63ff;
+}
+
+.google-success-card {
+    position: relative;
+    z-index: 2;
+    width: min(470px, 100%);
+    padding: 42px 38px 25px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: 27px;
+    background:radial-gradient(circle at 50% 0%, rgba(77, 231, 255, 0.05), transparent 38%), rgba(9, 14, 30, 0.78);
+    backdrop-filter: blur(24px);
+    box-shadow:
+        0 40px 100px rgba(0, 0, 0, 0.4),
+        inset 0 1px rgba(255, 255, 255, 0.04);
+}
+
+.google-success-logo {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    color: #4de7ff;
+    background: linear-gradient(135deg, rgba(77, 231, 255, 0.18), rgba(154, 99, 255, 0.2));
+    border: 1px solid rgba(77, 231, 255, 0.2);
+    font-family: monospace;
+    font-size: 16px;
+    font-weight: 800;
+    box-shadow: 0 0 35px rgba(77, 231, 255, 0.1);
+}
+
+.google-success-loader {
+    width: 76px;
+    height: 76px;
+    margin: 0 auto 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(77, 231, 255, 0.07), transparent 65%);
+    border: 1px solid rgba(77, 231, 255, 0.08);
+}
+
+.google-success-spinner {
+    width: 38px;
+    height: 38px;
+    border: 2px solid rgba(77, 231, 255, 0.12);
+    border-top-color: #4de7ff;
+    border-right-color: #648bff;
+    border-radius: 50%;
+    box-shadow:0 0 25px rgba(77, 231, 255, 0.1);
+    animation: google-success-spin 0.8s linear infinite;
+}
+
+@keyframes google-success-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.google-success-status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    color: #4de7ff;
+    font-size: 1vh;
+    font-weight: 800;
+    letter-spacing: 1.7px;
+}
+
+.google-success-status span {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #54f0bd;
+    box-shadow: 0 0 12px rgba(84, 240, 189, 0.7);
+    animation: google-success-pulse 1.2s ease-in-out infinite;
+}
+
+@keyframes google-success-pulse {
+    0%,
+    100% {
+        opacity: 0.45;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+.google-success-card h1 {
+    margin: 14px 0 10px;
+    font-size: clamp(32px, 6vw, 44px);
+    line-height: 1;
+    letter-spacing: -2px;
+}
+
+.google-success-card h1 span {
+    background: linear-gradient(110deg,#4de7ff,#648bff,#9a63ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.google-success-card > p {
+    max-width: 360px;
+    margin: 0 auto;
+    color: #727e97;
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+.google-success-terminal {
+    margin-top: 28px;
+    text-align: left;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.065);
+    border-radius: 13px;
+    background: #050811;
+    box-shadow: inset 0 1px rgba(255, 255, 255, 0.025);
+}
+
+.terminal-top {
+    height: 32px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 11px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    color: #455069;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.terminal-dots {
+    display: flex;
+    gap: 5px;
+}
+
+.terminal-dots span {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.terminal-body {
+    padding: 14px;
+    color: #66728b;
+    font-family: monospace;
+    font-size: 1vh;
+    line-height: 2;
+}
+
+.terminal-prefix {
+    color: #4de7ff;
+}
+
+.terminal-prefix.success {
+    color: #54f0bd;
+}
+
+.google-success-footer {
+    margin-top: 27px;
+    padding-top: 18px;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    color: #465069;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+}
+
+.google-success-footer span:first-child {
+    color: #77839c;
+}
+
+.google-success-footer span:first-child span {
+    color: #4de7ff;
+}
+
+
+
+@media (max-width: 520px) {
+    .google-success-page {
+        padding: 18px;
+    }
+    .google-success-card {
+        padding: 32px 22px 22px;
+    }
+    .google-success-card h1 {
+        font-size: 35px;
+    }
+    .google-success-footer {
+        flex-direction: column;
+        gap: 7px;
+    }
+}
